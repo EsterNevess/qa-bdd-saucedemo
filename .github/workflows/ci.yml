@@ -1,0 +1,39 @@
+name: Testes BDD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  bdd:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar dependências
+        run: pip install -r requirements.txt
+
+      - name: Instalar o navegador
+        run: python -m playwright install --with-deps chromium
+
+      - name: Executar os cenários
+        run: pytest
+
+      - name: Publicar relatório e evidências
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorio-bdd
+          path: |
+            relatorio.html
+            evidencias/
+          if-no-files-found: ignore
