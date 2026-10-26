@@ -28,7 +28,18 @@ class ProdutosPage(BasePage):
     def abrir(self, caminho: str = "/inventory.html") -> None:
         super().abrir(caminho)
 
+    def aguardar_listagem(self, timeout: int = 15000) -> None:
+        """Espera o primeiro produto aparecer.
+
+        `locator.count()` não espera por nada: o Playwright só aguarda
+        automaticamente em ações e em `expect`. Sem esta espera, a contagem
+        roda antes da renderização em máquinas lentas (foi o que quebrou no CI
+        e passava localmente).
+        """
+        self.page.locator(self.ITEM).first.wait_for(state="visible", timeout=timeout)
+
     def quantidade_de_produtos(self) -> int:
+        self.aguardar_listagem()
         return self.page.locator(self.ITEM).count()
 
     def nomes(self) -> list[str]:
