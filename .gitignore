@@ -6,3 +6,7 @@ venv/
 relatorio.html
 evidencias/
 test-results/
+allure-results/
+allure-report/
+allure-history/
+gh-pages/

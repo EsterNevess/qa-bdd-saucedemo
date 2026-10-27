@@ -1,6 +1,9 @@
 # BDD com pytest-bdd — Saucedemo
 
 [![Testes BDD](https://github.com/EsterNevess/qa-bdd-saucedemo/actions/workflows/ci.yml/badge.svg)](https://github.com/EsterNevess/qa-bdd-saucedemo/actions/workflows/ci.yml)
+[![Relatório Allure](https://img.shields.io/badge/Relat%C3%B3rio-Allure-FF5722?logo=qase&logoColor=white)](https://esternevess.github.io/qa-bdd-saucedemo/)
+
+📊 **[Relatório Allure da última execução](https://esternevess.github.io/qa-bdd-saucedemo/)** — publicado automaticamente a cada push, com histórico das últimas 20 execuções.
 
 Automação dos **13 cenários Gherkin** que eu havia escrito e executado manualmente em
 [qa-saucedemo-teste-manual](https://github.com/EsterNevess/qa-saucedemo-teste-manual).
@@ -42,8 +45,24 @@ Page Object concentra **como** a página é acessada. Quando um seletor muda, mu
 
 ## Evidência de falha
 
-O `conftest.py` tem um hook que captura print da tela sempre que um cenário falha, e salva em
-`evidencias/`. No CI, o relatório HTML e as evidências ficam disponíveis como artefato da execução.
+O `conftest.py` tem um hook que, quando um cenário falha, captura três coisas e as anexa ao
+relatório Allure: **print da tela inteira**, **URL no momento da falha** e **HTML da página**.
+
+O print também vai para `evidencias/` em disco, para quem está rodando localmente. A duplicação é
+proposital: quem depura na própria máquina quer o arquivo à mão; quem só vai abrir o relatório
+publicado precisa da evidência dentro dele. Print que ninguém encontra não é evidência.
+
+## Relatório Allure
+
+O [relatório](https://esternevess.github.io/qa-bdd-saucedemo/) é gerado e publicado no GitHub Pages
+a cada push, e guarda o **histórico das últimas 20 execuções** — o que permite ver tendência, e não
+só a foto do momento. Teste que falha de vez em quando aparece no gráfico de histórico; numa
+execução isolada, não.
+
+O CI roda os testes com `continue-on-error` e só depois devolve o resultado real ao job. Parece
+contraintuitivo, mas é necessário: sem isso, o pipeline morre na falha e o relatório **não** é
+publicado — justamente quando ele seria mais útil. O passo final garante que o selo do README
+continue refletindo a verdade.
 
 ## Como rodar
 

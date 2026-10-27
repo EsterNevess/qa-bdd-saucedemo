@@ -2,3 +2,4 @@ pytest==8.3.4
 pytest-bdd==8.1.0
 pytest-playwright==0.6.2
 pytest-html==4.1.1
+allure-pytest-bdd==2.15.0
