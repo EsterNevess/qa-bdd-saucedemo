@@ -1,0 +1,40 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"Como usuário autenticado
+Quero adicionar e remover produtos do carrinho
+Para montar o meu pedido","2457","CT-G12 - Adicionar produto ao carrinho","","2026-10-27","passed","2026-10-27","","","",""
+"Como usuário autenticado
+Quero visualizar e ordenar os produtos
+Para encontrar o que procuro","305","CT-G08 - Ordenar por preço do maior para o menor","","2026-10-27","passed","2026-10-27","","","",""
+"Como usuário do Saucedemo
+Quero autenticar com minhas credenciais
+Para acessar a lista de produtos","255","CT-G02 - Login com credenciais inválidas","","2026-10-27","passed","2026-10-27","","","",""
+"Como usuário autenticado
+Quero visualizar e ordenar os produtos
+Para encontrar o que procuro","303","CT-G09 - Ordenar por nome de A a Z","","2026-10-27","passed","2026-10-27","","","",""
+"Como usuário do Saucedemo
+Quero autenticar com minhas credenciais
+Para acessar a lista de produtos","246","CT-G04 - Login com campos em branco","","2026-10-27","passed","2026-10-27","","","",""
+"Como usuário do Saucedemo
+Quero autenticar com minhas credenciais
+Para acessar a lista de produtos","303","CT-G01 - Login com credenciais válidas","","2026-10-27","passed","2026-10-27","","","",""
+"Como usuário autenticado
+Quero visualizar e ordenar os produtos
+Para encontrar o que procuro","302","CT-G07 - Ordenar por preço do menor para o maior","","2026-10-27","passed","2026-10-27","","","",""
+"Como usuário do Saucedemo
+Quero autenticar com minhas credenciais
+Para acessar a lista de produtos","273","CT-G05 - Login com senha em branco","","2026-10-27","passed","2026-10-27","","","",""
+"Como usuário autenticado
+Quero visualizar e ordenar os produtos
+Para encontrar o que procuro","365","CT-G06 - Listagem de produtos após login","","2026-10-27","passed","2026-10-27","","","",""
+"Como usuário autenticado
+Quero visualizar e ordenar os produtos
+Para encontrar o que procuro","330","CT-G10 - Ordenar por nome de Z a A","","2026-10-27","passed","2026-10-27","","","",""
+"Como usuário autenticado
+Quero visualizar e ordenar os produtos
+Para encontrar o que procuro","382","CT-G11 - Ver detalhes de um produto","","2026-10-27","passed","2026-10-27","","","",""
+"Como usuário do Saucedemo
+Quero autenticar com minhas credenciais
+Para acessar a lista de produtos","250","CT-G03 - Login com senha incorreta","","2026-10-27","passed","2026-10-27","","","",""
+"Como usuário autenticado
+Quero adicionar e remover produtos do carrinho
+Para montar o meu pedido","351","CT-G13 - Remover produto do carrinho","","2026-10-27","passed","2026-10-27","","","",""
